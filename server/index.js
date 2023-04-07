@@ -39,10 +39,7 @@ var options = {
 };
 
 mongoose
-  .connect(
-    `mongodb+srv://akash:dMkB7J9DknnGcJIV@tutorial.tzzkl.mongodb.net/test?retryWrites=true&w=majority`,
-    options
-  )
+  .connect(process.env.MONGO_URL, options)
   .then(async () => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     /* ADD DATA ONE TIME ONLY */
